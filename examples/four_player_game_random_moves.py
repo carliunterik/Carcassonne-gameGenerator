@@ -7,6 +7,7 @@ from wingedsheep.carcassonne.objects.actions.action import Action
 from wingedsheep.carcassonne.objects.meeple_type import MeepleType
 from wingedsheep.carcassonne.tile_sets.supplementary_rules import SupplementaryRule
 from wingedsheep.carcassonne.tile_sets.tile_sets import TileSet
+import time
 
 
 def print_state(carcassonne_game_state: CarcassonneGameState):
@@ -57,6 +58,7 @@ while not game.is_finished():
     if action is not None:
         game.step(player, action)
     game.render()
+    time.sleep(1)
 
 print_state(carcassonne_game_state=game.state)
 input("Press Enter to continue...")
